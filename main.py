@@ -110,7 +110,7 @@ async def parse_subcategories_flat(page, level=1, max_level=8):
 
 async def parse_main_wildberries_to_excel():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(
             viewport={'width': 1200, 'height': 900},
             user_agent=(
